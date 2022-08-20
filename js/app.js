@@ -47,11 +47,16 @@ document.getElementById('keypad').addEventListener('click',function(event){
         const keypadNumbersField = document.getElementById('keypad-numbers');
         const KeypadNumbers = keypadNumbersField.value;
 
+
+        const pinMatchedMessage = document.getElementById('pin-matched');
+        const pinNotMatchedMessage = document.getElementById('pin-not-matched');
         if(KeypadNumbers === currentPin){
-            console.log('correct pin');
+            pinMatchedMessage.style.display = 'block';
+            pinNotMatchedMessage.style.display = 'none';
         }
         else{
-            console.log('Incorrect pin');
+            pinNotMatchedMessage.style.display = 'block';
+            pinMatchedMessage.style.display = 'none';
         }
     })
 })
